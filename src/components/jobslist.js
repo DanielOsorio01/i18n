@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Job from "./job";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 
 const JobsList = () => {
   const [offers] = useState([
@@ -32,11 +32,11 @@ const JobsList = () => {
       views: 3000000,
     },
   ]);
-
+  const intl = useIntl();
   return (
     <div>
       <table className="table">
-        <thead className={<FormattedMessage id="TableColor"/>}>
+        <thead className={intl.formatMessage({id:"TableColor"})}>
           <tr>
             <th scope="col">#</th>
             <th scope="col">
